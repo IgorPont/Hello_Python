@@ -52,6 +52,11 @@ def print_first_num_fraction(num):
 # num_user = float(input('Введите число: '))
 # print(print_first_num_fraction(num_user))
 
+# Альтернативное решение
+# x = float(input())
+# x = int((x*10) % 10)
+# print(x)
+
 # 5. Напишите программу, которая принимает на вход число и проверяет, кратно ли оно 5 и 10 или 15, но не 30.
 
 
@@ -98,4 +103,7 @@ def computer_virus(string):
 
 x = True
 y = False
-print(not(x or y) is not(x) and not(y))
+if not(x or y) is (not(x) and not(y)):
+    print('Высказывание истинно')
+else:
+    print('Высказывание ложно.')
