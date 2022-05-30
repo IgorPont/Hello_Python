@@ -44,9 +44,17 @@
 # else:
 #     print('Числа равны')
 
-line = ""
-for i in range(5):
-    line = ""
-    for j in range(5):
-        line += "*"
-    print(line)
+# line = ""
+# for i in range(5):
+#     line = ""
+#     for j in range(5):
+#         line += "*"
+#     print(line)
+
+def f(x):
+    if x == 1:
+        return 'Целое'
+    elif x == 2.3:
+        return 23
+    else:
+        return
