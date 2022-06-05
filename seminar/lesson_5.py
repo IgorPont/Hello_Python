@@ -1,5 +1,4 @@
 from os import system
-system('cls')
 
 # def to_bool(x):
 #     if x == 0:
@@ -37,7 +36,7 @@ def request_user(f):
         print(f)
         count += 1
         user = not(user)
-        if f == 0:
+        if f <= 0:
             print(f'Игрок {int(user)+1} победил!')
 
 
