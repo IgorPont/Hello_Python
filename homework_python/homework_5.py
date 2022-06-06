@@ -40,33 +40,49 @@
 # Среди чисел не хватает одного, чтобы выполнялось условие
 # A[i] - 1 = A[i-1]. Найти его.
 
-def get_num_from_file(n):
-    data = open(n, 'r')
-    d_list = data.read() + ' '
-    d_list = list(map(int, d_list.split()))
-    data.close()
-    return d_list
+# def get_num_from_file(n):
+#     data = open(n, 'r')
+#     d_list = data.read() + ' '
+#     d_list = list(map(int, d_list.split()))
+#     data.close()
+#     return d_list
 
 
-def find_miss_number(a_list):
-    for i in range(len(a_list)-1):
-        if a_list[i+1] - a_list[i] > 1:
-            return a_list[i] + 1
+# def find_miss_number(a_list):
+#     for i in range(len(a_list)-1):
+#         if a_list[i+1] - a_list[i] > 1:
+#             return a_list[i] + 1
 
 
-# Function adds the missing number
-def add_miss_num(num):
-    for i in range(len(num)-1):
-        if num[i+1] - num[i] > 1:
-            num.insert(i+1, num[i]+1)
-    return num
+# # Function adds the missing number
+# def add_miss_num(num):
+#     for i in range(len(num)-1):
+#         if num[i+1] - num[i] > 1:
+#             num.insert(i+1, num[i]+1)
+#     return num
 
 
-numbers = 'find_number_task_35.txt'
-num_list = get_num_from_file(numbers)
-miss_num = find_miss_number(num_list)
-# add_num = add_miss_num(num_list)
+# numbers = 'find_number_task_35.txt'
+# num_list = get_num_from_file(numbers)
+# miss_num = find_miss_number(num_list)
+# # add_num = add_miss_num(num_list)
 
-print(num_list)
-print(miss_num)
-# print(add_num)
+# print(num_list)
+# print(miss_num)
+# # print(add_num)
+
+# ===Задача 43.===
+# Дана последовательность чисел.
+# Получить список уникальных элементов заданной последовательности.
+# Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [2, 10]
+
+def unique_list_elements(any_list):
+    unique = []
+    for i in range(len(any_list)):
+        if any_list[i] not in any_list[i+1::] and any_list[i] not in any_list[:i-1:]:
+            unique.append(any_list[i])
+    return unique
+
+
+seq = [1, 2, 3, 5, 1, 5, 3, 10]
+print(unique_list_elements(seq))
