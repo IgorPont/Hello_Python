@@ -24,24 +24,25 @@ def rle_encode(data):
     for char in data:
         if char != pr_char:
             if pr_char:
-                encode += str(count) + pr_char
+                encode += str(count) + pr_char + ' '
             count = 1
             pr_char = char
         else:
             count += 1
-    encode += str(count) + pr_char
+    encode += str(count) + pr_char + ' '
     return encode
 
 
 def rle_decode(data):
     decode = ''
     count = ''
-    for char in data:
-        if char.isdigit():
-            count += char
-        else:
-            decode += char * int(count)
+    i = 0
+    while i <= (len(data)-1):
+        count += data[i]
+        if data[i] == ' ':
+            decode += data[i - 1] * int(count[:-2])
             count = ''
+        i += 1
     return decode
 
 
